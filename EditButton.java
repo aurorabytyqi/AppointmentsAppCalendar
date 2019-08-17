@@ -59,7 +59,7 @@ public class EditButton extends JButton implements ActionListener{
       jSpinner1.getEditor().getComponent(0).setBackground(new Color(200,200,220));
       
 
-      JLabel h=new JLabel("Time: ");
+      JLabel h=new JLabel("Hour: ");
       JLabel t=new JLabel("Title: ");
       JLabel d=new JLabel("Description: ");
       JButton cancel=new JButton("Back");
