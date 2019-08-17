@@ -1,7 +1,8 @@
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.event.*;
-import java.awt.*; 
+import java.awt.*;
+import java.util.*; 
 public class MyButton extends JButton implements ActionListener{
    private GridCalendar model;
    private AppointmentsDatabase events;
@@ -26,7 +27,7 @@ public class MyButton extends JButton implements ActionListener{
    }
    
    public void actionPerformed(ActionEvent e){
-      frame=new JFrame("New Window");
+      frame=new JFrame("");
       
       Container cp=frame.getContentPane();
       cp.setLayout(new BorderLayout());
@@ -39,9 +40,9 @@ public class MyButton extends JButton implements ActionListener{
       JButton view=new ViewButton("View",this);
       JButton edit=new EditButton("Edit",this);
      
-      String[] array=new String[2];
+      String[] array=new String[100];
       if(!OK){
-         for(int i=0;i<2;i++){
+         for(int i=0;i<100;i++){
             if(events.getAppointment()[i]!=null)
                array[i]=events.getAppointment()[i].getHour()+ " "+
                        events.getAppointment()[i].getEvent();
@@ -53,8 +54,9 @@ public class MyButton extends JButton implements ActionListener{
             array[i]="";
          }
       }
+
       list=new JList(array);
-      JScrollPane sp=new JScrollPane(list);
+      JScrollPane sp=new JScrollPane( list);
       JButton delete=new DeleteButton("Delete",this);
    
       
